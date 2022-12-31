@@ -16,8 +16,8 @@ app.use(express.json());
 app.use('/', express.static(path.join(__dirname, 'public')));
 
 app.use('/', require('./routes/root'));
-app.use(planetsRouter);
-app.use(lauchesRouter);
+app.use('/planets', planetsRouter);
+app.use('/launches', lauchesRouter);
 
 app.all('*', (req, res) => {
     res.status(404);
